@@ -10,7 +10,7 @@ import android.widget.EditText;
 public class AddActivity extends AppCompatActivity {
 
     EditText title_input, author_input, pages_input;
-    Button add_button;
+    Button save_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +20,8 @@ public class AddActivity extends AppCompatActivity {
         title_input = findViewById(R.id.title_input);
         author_input = findViewById(R.id.author);
         pages_input = findViewById(R.id.pages);
-        add_button = findViewById(R.id.add_button);
-        add_button.setOnClickListener(new View.OnClickListener() {
+        save_button = findViewById(R.id.save);
+        save_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SqliteDatabaseHelper mydb = new SqliteDatabaseHelper(AddActivity.this);
