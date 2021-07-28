@@ -27,8 +27,11 @@ public class SqliteDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String query =
-                "CREATE TABLE " + TABLE_NAME + " (" +COLUMN_ID + "INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_TITLE + " TEXT, " + COLUMN_AUTHOR + " TEXT, " + COLUMN_PAGES + " INTEGER);";
+        String query = "CREATE TABLE " + TABLE_NAME +
+                        " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        COLUMN_TITLE + " TEXT, " +
+                        COLUMN_AUTHOR + " TEXT, " +
+                        COLUMN_PAGES + " INTEGER);";
         db.execSQL(query);
     }
 
@@ -43,8 +46,8 @@ public class SqliteDatabaseHelper extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
 
         cv.put(COLUMN_TITLE, title);
-        cv.put(COLUMN_TITLE, author);
-        cv.put(COLUMN_TITLE, pages);
+        cv.put(COLUMN_AUTHOR, author);
+        cv.put(COLUMN_PAGES, pages);
         long result = db.insert(TABLE_NAME,null,cv);
         if(result == -1){
             Toast.makeText(context,"Failed",Toast.LENGTH_SHORT).show();
