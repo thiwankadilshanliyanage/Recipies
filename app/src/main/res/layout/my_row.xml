@@ -9,6 +9,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -42,7 +43,7 @@
                 app:layout_constraintTop_toTopOf="@+id/book_id_text" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/book_author_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Author 1"
