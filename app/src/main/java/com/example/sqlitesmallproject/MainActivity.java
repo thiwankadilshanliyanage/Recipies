@@ -42,9 +42,11 @@ public class MainActivity extends AppCompatActivity {
         book_author = new ArrayList<>();
         book_pages = new ArrayList<>();
 
+        storeDataInArrays();
+
     }
 
-    void displayData(){
+    void storeDataInArrays(){
         Cursor cursor = myDB.readAllData();
         if(cursor.getCount() == 0){
             Toast.makeText(this,"No data", Toast.LENGTH_SHORT).show();
