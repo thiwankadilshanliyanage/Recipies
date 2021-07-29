@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sqlitesmallproject">
-        <activity android:name=".AddActivity"
+        <activity android:name=".UpdateActivity"></activity>
+        <activity
+            android:name=".AddActivity"
             android:label="Add Book"
-           android:parentActivityName=".MainActivity" >
-        </activity>
+            android:parentActivityName=".MainActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:label="Book Library">
