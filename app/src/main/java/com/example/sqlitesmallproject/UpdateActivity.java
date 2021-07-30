@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class UpdateActivity extends AppCompatActivity {
 
-    EditText title_input, author_input, pages_input;
+    EditText title_input2, author_input2, pages_input2;
     Button update_button;
 
     String id, title, author, pages;
@@ -20,17 +20,22 @@ public class UpdateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
 
-        title_input = findViewById(R.id.title_input2);
-        author_input = findViewById(R.id.author2);
-        pages_input = findViewById(R.id.pages2);
+        title_input2 = findViewById(R.id.title_input2);
+        author_input2 = findViewById(R.id.author2);
+        pages_input2 = findViewById(R.id.pages2);
         update_button = findViewById(R.id.update);
+        //first we call this
+        getAndSetIntentData();
         update_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //And only then we call this
+                SqliteDatabaseHelper myDB = new SqliteDatabaseHelper(UpdateActivity.this);
+                myDB.updateData(id, title, author, pages);
             }
         });
-        getAndSetIntentData();
+
+
     }
     void getAndSetIntentData(){
         if(getIntent().hasExtra("id") && getIntent().hasExtra("title") && getIntent().hasExtra("author") && getIntent().hasExtra("pages")){
@@ -41,9 +46,9 @@ public class UpdateActivity extends AppCompatActivity {
             pages = getIntent().getStringExtra("pages");
 
             //setting  Intent data
-            title_input.setText(title);
-            author_input.setText(author);
-            pages_input.setText(pages);
+            title_input2.setText(title);
+            author_input2.setText(author);
+            pages_input2.setText(pages);
 
 
         }else {
